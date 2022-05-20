@@ -15,7 +15,9 @@ public class SlytherinStudent extends HogwartsStudent {
             this.ambition = ambition;
             this.resourcefulness = resourcefulness;
             this.overbearing = overbearing;
-        } else throw new IllegalArgumentException("Введите корректные значения");
+        } else {
+            throw new IllegalArgumentException("Введите корректные значения");
+        }
     }
 
 
@@ -27,20 +29,20 @@ public class SlytherinStudent extends HogwartsStudent {
                 ", находчивость " + resourcefulness + ", жажда власти " + overbearing);
     }
 
-    public void compareWith(Object slytherinStudent) {
-        if (slytherinStudent.getClass() == this.getClass()) {
-            if (((SlytherinStudent) slytherinStudent).getWitchcraft() +
-                    ((SlytherinStudent) slytherinStudent).getWitchcraft() +
-                    ((SlytherinStudent) slytherinStudent).trick +
-                    ((SlytherinStudent) slytherinStudent).resolute +
-                    ((SlytherinStudent) slytherinStudent).ambition +
-                    ((SlytherinStudent) slytherinStudent).resourcefulness +
-                    ((SlytherinStudent) slytherinStudent).overbearing > this.getWitchcraft() +
-                    this.getTransgression() + this.ambition + this.resolute + this.trick +
-                    this.resourcefulness + this.overbearing) {
+    public void compareWith(SlytherinStudent slytherinStudent) {
+            if (slytherinStudent.getWitchcraft() + slytherinStudent.getWitchcraft() + slytherinStudent.trick +
+                    slytherinStudent.resolute + slytherinStudent.ambition + slytherinStudent.resourcefulness +
+                    slytherinStudent.overbearing > this.getWitchcraft() + this.getTransgression() +
+                    this.ambition + this.resolute + this.trick + this.resourcefulness + this.overbearing) {
                 System.out.println(slytherinStudent.toString() + " лучший Когтевранец, чем " + this.toString());
-            } else System.out.println(this.toString() + " лучший Когтевранрец, чем " + slytherinStudent.toString());
-        }
+            } else if (slytherinStudent.getWitchcraft() + slytherinStudent.getWitchcraft() + slytherinStudent.trick +
+                    slytherinStudent.resolute + slytherinStudent.ambition + slytherinStudent.resourcefulness +
+                    slytherinStudent.overbearing == this.getWitchcraft() + this.getTransgression() +
+                    this.ambition + this.resolute + this.trick + this.resourcefulness + this.overbearing) {
+                System.out.println(slytherinStudent.toString() + " такой же Когтевранец, как и " + this.toString());
+            } else {
+                System.out.println(this.toString() + " лучший Когтевранрец, чем " + slytherinStudent.toString());
+            }
     }
 
 

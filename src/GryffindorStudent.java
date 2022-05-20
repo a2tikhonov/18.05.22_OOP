@@ -10,7 +10,9 @@ public class GryffindorStudent extends HogwartsStudent {
             this.nobility = nobility;
             this.honor = honor;
             this.bravery = bravery;
-        } else throw new IllegalArgumentException("Введите корректные значения");
+        } else {
+            throw new IllegalArgumentException("Введите корректные значения");
+        }
     }
 
 
@@ -21,17 +23,18 @@ public class GryffindorStudent extends HogwartsStudent {
                 ", благородство " + nobility + ", честь " + honor + ", храбрость " + bravery);
     }
 
-    public void compareWith(Object gryffindorStudent) {
-        if (gryffindorStudent.getClass() == this.getClass()) {
-            if (((GryffindorStudent) gryffindorStudent).getWitchcraft() +
-                    ((GryffindorStudent) gryffindorStudent).getWitchcraft() +
-                    ((GryffindorStudent) gryffindorStudent).bravery +
-                    ((GryffindorStudent) gryffindorStudent).honor +
-                    ((GryffindorStudent) gryffindorStudent).nobility > this.getWitchcraft() +
+    public void compareWith(GryffindorStudent gryffindorStudent) {
+            if (gryffindorStudent.getWitchcraft() + gryffindorStudent.getWitchcraft() + gryffindorStudent.bravery +
+                    gryffindorStudent.honor + gryffindorStudent.nobility > this.getWitchcraft() +
                     this.getTransgression() + this.nobility + this.honor + this.bravery) {
                 System.out.println(gryffindorStudent.toString() + " лучший Гриффиндорец, чем " + this.toString());
-            } else System.out.println(this.toString() + " лучший Гриффиндорец, чем " + gryffindorStudent.toString());
-        }
+            } else if (gryffindorStudent.getWitchcraft() + gryffindorStudent.getWitchcraft() + gryffindorStudent.bravery +
+                    gryffindorStudent.honor + gryffindorStudent.nobility == this.getWitchcraft() +
+                    this.getTransgression() + this.nobility + this.honor + this.bravery) {
+                System.out.println(gryffindorStudent.toString() + " такой же Гриффиндорец, как и " + this.toString());
+            } else {
+                System.out.println(this.toString() + " лучший Гриффиндорец, чем " + gryffindorStudent.toString());
+            }
     }
 
 }

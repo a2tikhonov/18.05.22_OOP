@@ -41,17 +41,23 @@ public abstract class HogwartsStudent {
                 ": колдовство " + witchcraft + ", трансгрессия " + transgression);
     }
 
-    public void compareStudentWith(Object student) {
-        if (student instanceof  HufflepuffStudent) {
-            if (((HogwartsStudent) student).getWitchcraft() >
-            this.witchcraft) System.out.println(student.toString() + " обладает большей мощностью магии, чем " +
-                    this.toString());
-                else System.out.println(this.toString() + " обладает большей мощностью магии, чем " + student.toString());
-            if (((HogwartsStudent) student).getTransgression() > this.transgression) System.out.println(student.toString() +
-                     " обладает большей мощностью трансгрессии, чем " + this.toString());
-                else System.out.println(this.toString() + " обладает большей мощностью трансгрессии, чем " +
-                    student.toString());
-        }
+    public void compareStudentWith(HogwartsStudent student) {
+            if (student.getWitchcraft() > this.witchcraft) {
+                System.out.println(student.toString() + " обладает большей мощностью магии, чем " +
+                        this.toString());
+            } else if (student.getWitchcraft() == this.witchcraft) {
+                System.out.println(this.toString() + " обладает такой же мощностью магии, что и " + student.toString());
+            } else {
+                System.out.println(this.toString() + " обладает большей мощностью магии, чем " + student.toString());
+            }
+            if (student.getTransgression() > this.transgression) {
+                System.out.println(student.toString() + " обладает большей мощностью трансгрессии, чем " + this.toString());
+            } else if (student.getTransgression() == this.transgression) {
+                System.out.println(student.toString() + " обладает такой же мощностью трансгрессии, что и " + this.toString());
+            } else {
+                System.out.println(this.toString() + " обладает большей мощностью трансгрессии, чем " +
+                        student.toString());
+            }
     }
 
 }

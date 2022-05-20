@@ -11,7 +11,9 @@ public class HufflepuffStudent extends HogwartsStudent {
             this.industriousness = industriousness;
             this.loyalty = loyalty;
             this.honesty = honesty;
-        } else throw new IllegalArgumentException("Введите корректные значения");
+        } else {
+            throw new IllegalArgumentException("Введите корректные значения");
+        }
     }
 
 
@@ -22,17 +24,18 @@ public class HufflepuffStudent extends HogwartsStudent {
                 ", трудолюбие " + industriousness + ", верность " + loyalty + ", честность " + honesty);
     }
 
-    public void compareWith(Object hufflepuffStudent) {
-        if (hufflepuffStudent.getClass() == this.getClass()) {
-            if (((HufflepuffStudent) hufflepuffStudent).getWitchcraft() +
-                    ((HufflepuffStudent) hufflepuffStudent).getWitchcraft() +
-                    ((HufflepuffStudent) hufflepuffStudent).industriousness +
-                    ((HufflepuffStudent) hufflepuffStudent).loyalty +
-                    ((HufflepuffStudent) hufflepuffStudent).honesty > this.getWitchcraft() +
+    public void compareWith(HufflepuffStudent hufflepuffStudent) {
+            if (hufflepuffStudent.getWitchcraft() + hufflepuffStudent.getWitchcraft() + hufflepuffStudent.industriousness +
+                    hufflepuffStudent.loyalty + hufflepuffStudent.honesty > this.getWitchcraft() +
                     this.getTransgression() + this.honesty + this.loyalty + this.industriousness) {
                 System.out.println(hufflepuffStudent.toString() + " лучший Пуффендуйец, чем " + this.toString());
-            } else System.out.println(this.toString() + " лучший Пуффендуйец, чем " + hufflepuffStudent.toString());
-        }
+            } else if (hufflepuffStudent.getWitchcraft() + hufflepuffStudent.getWitchcraft() + hufflepuffStudent.industriousness +
+                    hufflepuffStudent.loyalty + hufflepuffStudent.honesty == this.getWitchcraft() +
+                    this.getTransgression() + this.honesty + this.loyalty + this.industriousness) {
+                System.out.println(hufflepuffStudent.toString() + " такой же Пуффендуйец, как и " + this.toString());
+            } else {
+                System.out.println(this.toString() + " лучший Пуффендуйец, чем " + hufflepuffStudent.toString());
+            }
     }
 
 }

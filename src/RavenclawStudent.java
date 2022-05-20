@@ -13,7 +13,9 @@ public class RavenclawStudent extends HogwartsStudent {
             this.wise = wise;
             this.witty = witty;
             this.creative = creative;
-        } else throw new IllegalArgumentException("Введите корректные значения");
+        } else {
+            throw new IllegalArgumentException("Введите корректные значения");
+        }
     }
 
 
@@ -24,18 +26,18 @@ public class RavenclawStudent extends HogwartsStudent {
                 ", ум " + trick + ", мудрость " + wise + ", остроумие " + witty + ", творчество " + creative);
     }
 
-    public void compareWith(Object ravenclawStudent) {
-        if (ravenclawStudent.getClass() == this.getClass()) {
-            if (((RavenclawStudent) ravenclawStudent).getWitchcraft() +
-                    ((RavenclawStudent) ravenclawStudent).getWitchcraft() +
-                    ((RavenclawStudent) ravenclawStudent).trick +
-                    ((RavenclawStudent) ravenclawStudent).wise +
-                    ((RavenclawStudent) ravenclawStudent).witty +
-                    ((RavenclawStudent) ravenclawStudent).creative > this.getWitchcraft() +
+    public void compareWith(RavenclawStudent ravenclawStudent) {
+            if (ravenclawStudent.getWitchcraft() + ravenclawStudent.getWitchcraft() + ravenclawStudent.trick +
+                    ravenclawStudent.wise + ravenclawStudent.witty + ravenclawStudent.creative > this.getWitchcraft() +
                     this.getTransgression() + this.witty + this.wise + this.trick + this.creative) {
                 System.out.println(ravenclawStudent.toString() + " лучший Когтевранец, чем " + this.toString());
-            } else System.out.println(this.toString() + " лучший Когтевранрец, чем " + ravenclawStudent.toString());
-        }
+            } else if (ravenclawStudent.getWitchcraft() + ravenclawStudent.getWitchcraft() + ravenclawStudent.trick +
+                    ravenclawStudent.wise + ravenclawStudent.witty + ravenclawStudent.creative == this.getWitchcraft() +
+                    this.getTransgression() + this.witty + this.wise + this.trick + this.creative) {
+                System.out.println(ravenclawStudent.toString() + " такой же Когтевранец, как и " + this.toString());
+            } else {
+                System.out.println(this.toString() + " лучший Когтевранрец, чем " + ravenclawStudent.toString());
+            }
     }
 
 }
