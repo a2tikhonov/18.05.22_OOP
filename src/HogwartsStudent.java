@@ -11,7 +11,9 @@ public abstract class HogwartsStudent {
             this.lastName = lastName;
             this.witchcraft = witchcraft;
             this.transgression = transgression;
-        } else throw new IllegalArgumentException("Введите корректные значения");
+        } else {
+            throw new IllegalArgumentException("Введите корректные значения");
+        }
     }
 
     public String getFirstName() {
