@@ -31,12 +31,12 @@ public class RavenclawStudent extends HogwartsStudent {
         int ravenclawStudentScore = ravenclawStudent.getWitchcraft() + ravenclawStudent.getWitchcraft() + ravenclawStudent.trick +
                 ravenclawStudent.wise + ravenclawStudent.witty + ravenclawStudent.creative;
         if (ravenclawStudentScore > thisStudentScore) {
-                System.out.println(ravenclawStudent.toString() + " лучший Когтевранец, чем " + this.toString());
-            } else if (ravenclawStudentScore == thisStudentScore) {
-                System.out.println(ravenclawStudent.toString() + " такой же Когтевранец, как и " + this.toString());
-            } else {
-                System.out.println(this.toString() + " лучший Когтевранрец, чем " + ravenclawStudent.toString());
-            }
+            System.out.println(ravenclawStudent.toString() + " лучший Когтевранец, чем " + this.toString());
+        } else if (ravenclawStudentScore == thisStudentScore) {
+            System.out.println(ravenclawStudent.toString() + " такой же Когтевранец, как и " + this.toString());
+        } else {
+            System.out.println(this.toString() + " лучший Когтевранрец, чем " + ravenclawStudent.toString());
+        }
     }
 
 }

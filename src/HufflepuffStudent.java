@@ -29,12 +29,12 @@ public class HufflepuffStudent extends HogwartsStudent {
         int hufflepuffStudentScore = hufflepuffStudent.getWitchcraft() + hufflepuffStudent.getWitchcraft() + hufflepuffStudent.industriousness +
                 hufflepuffStudent.loyalty + hufflepuffStudent.honesty;
         if (hufflepuffStudentScore > thisStudentScore) {
-                System.out.println(hufflepuffStudent.toString() + " лучший Пуффендуйец, чем " + this.toString());
-            } else if (hufflepuffStudentScore == thisStudentScore) {
-                System.out.println(hufflepuffStudent.toString() + " такой же Пуффендуйец, как и " + this.toString());
-            } else {
-                System.out.println(this.toString() + " лучший Пуффендуйец, чем " + hufflepuffStudent.toString());
-            }
+            System.out.println(hufflepuffStudent.toString() + " лучший Пуффендуйец, чем " + this.toString());
+        } else if (hufflepuffStudentScore == thisStudentScore) {
+            System.out.println(hufflepuffStudent.toString() + " такой же Пуффендуйец, как и " + this.toString());
+        } else {
+            System.out.println(this.toString() + " лучший Пуффендуйец, чем " + hufflepuffStudent.toString());
+        }
     }
 
 }

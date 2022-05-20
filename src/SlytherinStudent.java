@@ -36,12 +36,12 @@ public class SlytherinStudent extends HogwartsStudent {
                 slytherinStudent.resolute + slytherinStudent.ambition + slytherinStudent.resourcefulness +
                 slytherinStudent.overbearing;
         if (slytherinStudentScore > thisStudentScore) {
-                System.out.println(slytherinStudent.toString() + " лучший Когтевранец, чем " + this.toString());
-            } else if (slytherinStudentScore == thisStudentScore) {
-                System.out.println(slytherinStudent.toString() + " такой же Когтевранец, как и " + this.toString());
-            } else {
-                System.out.println(this.toString() + " лучший Когтевранрец, чем " + slytherinStudent.toString());
-            }
+            System.out.println(slytherinStudent.toString() + " лучший Когтевранец, чем " + this.toString());
+        } else if (slytherinStudentScore == thisStudentScore) {
+            System.out.println(slytherinStudent.toString() + " такой же Когтевранец, как и " + this.toString());
+        } else {
+            System.out.println(this.toString() + " лучший Когтевранрец, чем " + slytherinStudent.toString());
+        }
     }
 
 
