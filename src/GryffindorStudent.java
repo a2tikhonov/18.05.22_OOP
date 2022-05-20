@@ -24,13 +24,12 @@ public class GryffindorStudent extends HogwartsStudent {
     }
 
     public void compareWith(GryffindorStudent gryffindorStudent) {
-            if (gryffindorStudent.getWitchcraft() + gryffindorStudent.getWitchcraft() + gryffindorStudent.bravery +
-                    gryffindorStudent.honor + gryffindorStudent.nobility > this.getWitchcraft() +
-                    this.getTransgression() + this.nobility + this.honor + this.bravery) {
+            int thisStudentScore = this.getWitchcraft() + this.getTransgression() + this.nobility + this.honor + this.bravery;
+            int gryffindorStudentScore = gryffindorStudent.getWitchcraft() + gryffindorStudent.getWitchcraft() + gryffindorStudent.bravery +
+                    gryffindorStudent.honor + gryffindorStudent.nobility;
+            if (gryffindorStudentScore > thisStudentScore) {
                 System.out.println(gryffindorStudent.toString() + " лучший Гриффиндорец, чем " + this.toString());
-            } else if (gryffindorStudent.getWitchcraft() + gryffindorStudent.getWitchcraft() + gryffindorStudent.bravery +
-                    gryffindorStudent.honor + gryffindorStudent.nobility == this.getWitchcraft() +
-                    this.getTransgression() + this.nobility + this.honor + this.bravery) {
+            } else if (gryffindorStudentScore == thisStudentScore) {
                 System.out.println(gryffindorStudent.toString() + " такой же Гриффиндорец, как и " + this.toString());
             } else {
                 System.out.println(this.toString() + " лучший Гриффиндорец, чем " + gryffindorStudent.toString());

@@ -30,15 +30,14 @@ public class SlytherinStudent extends HogwartsStudent {
     }
 
     public void compareWith(SlytherinStudent slytherinStudent) {
-            if (slytherinStudent.getWitchcraft() + slytherinStudent.getWitchcraft() + slytherinStudent.trick +
-                    slytherinStudent.resolute + slytherinStudent.ambition + slytherinStudent.resourcefulness +
-                    slytherinStudent.overbearing > this.getWitchcraft() + this.getTransgression() +
-                    this.ambition + this.resolute + this.trick + this.resourcefulness + this.overbearing) {
+        int thisStudentScore = this.getWitchcraft() + this.getTransgression() + this.ambition +
+                this.resolute + this.trick + this.resourcefulness + this.overbearing;
+        int slytherinStudentScore = slytherinStudent.getWitchcraft() + slytherinStudent.getWitchcraft() + slytherinStudent.trick +
+                slytherinStudent.resolute + slytherinStudent.ambition + slytherinStudent.resourcefulness +
+                slytherinStudent.overbearing;
+        if (slytherinStudentScore > thisStudentScore) {
                 System.out.println(slytherinStudent.toString() + " лучший Когтевранец, чем " + this.toString());
-            } else if (slytherinStudent.getWitchcraft() + slytherinStudent.getWitchcraft() + slytherinStudent.trick +
-                    slytherinStudent.resolute + slytherinStudent.ambition + slytherinStudent.resourcefulness +
-                    slytherinStudent.overbearing == this.getWitchcraft() + this.getTransgression() +
-                    this.ambition + this.resolute + this.trick + this.resourcefulness + this.overbearing) {
+            } else if (slytherinStudentScore == thisStudentScore) {
                 System.out.println(slytherinStudent.toString() + " такой же Когтевранец, как и " + this.toString());
             } else {
                 System.out.println(this.toString() + " лучший Когтевранрец, чем " + slytherinStudent.toString());
